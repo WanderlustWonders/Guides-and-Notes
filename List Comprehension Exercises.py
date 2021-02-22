@@ -1,3 +1,5 @@
+# https://www.reddit.com/r/learnpython/comments/4d2yl7/i_need_list_comprehension_exercises_to_drill/
+
 # %%
 ## Find all of the numbers from 1-1000 that are divisible by 7
 
@@ -49,7 +51,12 @@ print(listToStr)
 
 
 # %%
-## Find all of the words in a string that are less than 4 letters
+## *Find all of the words in a string that are less than 4 letters
+
+sentence = "The quick brown fox jumps over the lazy dog."
+
+Short = [w for w in sentence.split() if len(w) < 4]
+Short
 
 
 
@@ -58,12 +65,52 @@ print(listToStr)
 # %%
 ## *Use a dictionary comprehension to count the length of each word in a sentence.
 
+sentence = "The quick brown fox jumps over the lazy dog."
+
+results = {word:len(word) for word in sentence.split()}
+results
+
+
+
+
+
+# %%
+## Change strings to list of integers
+
+lis = ('9, 4, 5, 8, 10, 14')
+
+lis = [int(s) for s in lis.split(',')]
+
+print(lis)
+
+
+
+
+
+# %%
+## Obtain user input for multiple indexes. The extract from list.
+
+lis = [9, 4, 5, 8, 10, 14]
+select = input('Select files to concatenate using a number (count begins at 0). Please separate selections with comma:')
+
+# selectindex = [int(num) for num in select.split(',')]
+
+selectindex = map(int, select.split(','))
+
+userlis = [lis[num] for num in selectindex]
+
+print(userlis)
+
 
 
 
 
 # %%
 ## *Use a nested list comprehension to find all of the numbers from 1-1000 that are divisible by any single digit besides 1 (2-9)
+
+
+Div = [x]
+
 
 
 
@@ -85,6 +132,22 @@ print(listToStr)
 
 # %%
 ## A list of all square numbers formed by squaring the numbers from 1 to 1000.
+
+
+
+
+
+
+
+
+
+# %%
+
+# Return a list of the full path to items in a directory (hint, use os.listdir() and os.path.join())
+# Now extend this same one to exclude directories (hint, use os.path.isdir())
+# Now extend it further to filter to only files ending in .jpg and .png
+
+
 
 
 
