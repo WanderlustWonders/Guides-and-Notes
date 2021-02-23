@@ -109,15 +109,36 @@ print(userlis)
 ## *Use a nested list comprehension to find all of the numbers from 1-1000 that are divisible by any single digit besides 1 (2-9)
 
 
-Div = [x]
+# [x for x in range(1, 1001, 1) if x % n in range(2, 10, 1) == 0]
+# Div = [x for x in range(1, 1001, 1) if n for n in range(2, 10, 1) % n == 0]
 
+
+# Divisible = [x for divisor in range(2, 10, 1) if x % divisor == True]
+
+Div = [x for x in range(1, 1001, 1) if True in [True for divisor in range(2, 10, 1) if x % divisor == 0]]
+Div
 
 
 
 
 
 # %%
-## *For all the numbers 1-1000, use a nested list/dictionary comprehension to find the highest single digit any of the numbers is divisible by
+## *For all the numbers 1-1000, use a nested list/dictionary comprehension to find the highest 
+# single digit any of the numbers is divisible by
+
+
+# Highest Single Digit Divisible by 
+# True for max(divisor) in range(2, 10, 1) if x % divisor == 0
+
+
+# Div = [x for x in range(1, 1001, 1) if True in [True for divisor in range(2, 10, 1) if x % divisor == 0]]
+# Div
+
+# MaxDiv = {num:max(divisor) for num in range(1, 1001, 1) if True in [True for divisor in range(2, 10, 1) if num % divisor == 0]}
+
+
+MaxDiv = {num:max([divisor for divisor in range(1, 10, 1) if num % divisor == 0]) for num in range(1, 1001, 1)}
+print(MaxDiv)
 
 
 
